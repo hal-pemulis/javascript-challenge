@@ -12,13 +12,16 @@ var tableBody = d3.select("tbody")
 
 // Create event handlers 
 button.on("click", eventHandler);
-form.on("submit",eventHandler);
+form.on("submit", eventHandler);
 
 // Complete the event handler function for the form
 function eventHandler() {
 
   // Prevent refreshing
   d3.event.preventDefault();
+
+  // Select rows and clear table
+  tableBody.selectAll("tr").remove()
 
   // Select HTML of input element 
   var inputElement = d3.select("input");
